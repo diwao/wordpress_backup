@@ -61,7 +61,7 @@ set timeout 60
 spawn scp $basedir/$currentdate.zip $user@$domain:$savepath
 expect \"$user@$domain's password:\"
 send  \"$password\n\"
-interact
+expect {\"100%\" { exit 0 }}
 "
 
 #---------------------------------------
