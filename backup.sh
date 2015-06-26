@@ -78,7 +78,7 @@ for var in `$targetcommand`
 do
 	#保存期間を過ぎたzipを削除
 	target=`echo $var | sed s/\.zip//g`
-	if [ $target -lt $olddate ]
+	if [ $target -le $olddate ]
 	then
 		rm -f $basedir/$var
 		echo "delete $var"
